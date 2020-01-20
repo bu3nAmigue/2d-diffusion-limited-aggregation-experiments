@@ -22,7 +22,7 @@ export default {
    * Number of walkers allowed in each iteration
    * @type {number}
    */
-  MaxWalkers: 5000,
+  MaxWalkers: 8000,
 
   /**
    * Distance to edges to spawn new walkers within when using 'Edges' for WalkerSource
@@ -183,9 +183,9 @@ export default {
    * @type {object}
    */
   BackgroundColor: {
-    h: 230,
-    s: 20,
-    b: 40
+    h: 0,
+    s: 68,
+    b: 0,
   },
 
   /**
@@ -193,9 +193,10 @@ export default {
    * @type {object}
    */
   WalkerColor: {
-    h: 200,
-    s: 30,
-    b: 44
+    h: 0,
+    s: 0,
+    b: 20,
+    
   },
   
   /**
@@ -203,9 +204,9 @@ export default {
    * @type {object}
    */
   ClusterColor: {
-    h: 30,
-    s: 70,
-    b: 80  
+    h: 0,
+    s: 100,
+    b: 100, 
   },
 
   /**
@@ -213,9 +214,10 @@ export default {
    * @type {object}
    */
   ShapeColor: {
-    h: 100,
-    s: 50,
-    b: 80
+    h: 0,
+    s: 0,
+    b: 20,
+   
   },
 
   /**
@@ -223,9 +225,9 @@ export default {
    * @type {object}
    */
   LineColor: {
-    h: 10,
-    s: 70,
-    b: 100
+    h: 0,
+    s: 100,
+    b: 66,
   },
 
   /**
@@ -234,8 +236,8 @@ export default {
    */
   FrameColor: {
     h: 0,
-    s: 100,
-    b: 100
+    s: 68,
+    b: 66,
   }
   
 };

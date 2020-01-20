@@ -9,15 +9,19 @@ module.exports = {
     differentShapes: path.resolve('../04-different-shapes/js/entry.js'),
     svgInput: path.resolve('../05-svg-input/js/entry.js'),
     interactivity: path.resolve('../06-interactivity/js/entry.js'),
-    flowfields: path.resolve('../07-flowfields/js/entry.js')
+    flowfields: path.resolve('../07-flowfields/js/entry.js'),
+    audioreactivity: path.resolve('../08-audioreactivity/js/entry.js')
   },
   module: {
     rules: [
       {
         test: /\.svg$/,
         loader: 'svg-inline-loader'
-      }
-    ]
+      },
+    {
+      test: /\.mp3$/,
+      loader: 'file-loader'
+  }]
   },
   devtool: 'inline-source-map',
   devServer: {
