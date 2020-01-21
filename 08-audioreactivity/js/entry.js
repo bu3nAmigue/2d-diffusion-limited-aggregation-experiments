@@ -4,8 +4,7 @@ import DLA from '../../core/DLA';
 
 let dla,
     song,
-    amplitude,
-    showText = true;
+    amplitude;
 
 const sketch = function (instancep5) {
 
@@ -23,13 +22,12 @@ const sketch = function (instancep5) {
     amplitude = new p5.Amplitude();
 
 
-
     // Set up the simulation environment
     dla = new DLA(instancep5, Settings);
     // Spawn default walkers and clusters
     dla.customMovementFunction =  {
         dx: amplitude.getLevel() * 1000,
-        dy: amplitude.getLevel() * 100,
+        dy: amplitude.getLevel() * 1000,
       }
     reset();
   }
@@ -40,7 +38,7 @@ const sketch = function (instancep5) {
 
       let level = amplitude.getLevel()*100;
   
-        dla.settings.BiasForce = amplitude.getLevel()*50;
+        dla.BiasForce = amplitude.getLevel()*50;
 
         if (dla.numWalkers < 0){
           dla.removeAll();
@@ -48,9 +46,11 @@ const sketch = function (instancep5) {
           dla.createDefaultClusters('Point');
         }
         if (level > 10){
-          
           dla.toggleLineRenderingMode();
-       
+        }
+
+        if(level > 5 && level < 10){
+          dla.togglePause();
         }
        
         dla.iterate();
@@ -78,10 +78,6 @@ const sketch = function (instancep5) {
   // Key handler ---------------------------------------------------------
   instancep5.keyReleased = function () {
     switch (instancep5.key) {
-      case ' ':
-        dla.togglePause();
-        break;
-
       case 'w':
         dla.toggleShowWalkers();
         break;
@@ -93,16 +89,10 @@ const sketch = function (instancep5) {
       case 'r':
         reset();
         break;
-
       case 'f':
         dla.toggleUseFrame();
         reset();
         break;
-
-      case 'l':
-        dla.toggleLineRenderingMode();
-        break;
-        
       case 'e':
         dla.export();
         break;

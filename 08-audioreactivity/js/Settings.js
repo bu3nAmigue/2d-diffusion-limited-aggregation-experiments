@@ -1,6 +1,6 @@
 export default {
   // Diameter of particles
-  CircleDiameterRange: [2, 8],
+  CircleDiameterRange: [4, 10],
 
   // Limit number of walkers and rely on bias to increase collision rate
  
@@ -18,5 +18,9 @@ export default {
   UseColors: true,
 
   RenderMode: 'Shapes',
+
+  MaxWalkers: 4000,
+
+  useFrame: true,
 
 };

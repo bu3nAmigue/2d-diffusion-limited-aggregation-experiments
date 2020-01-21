@@ -1,9 +1,9 @@
 export default {
   // Diameter of particles
-  CircleDiameterRange: [2, 25],
+  CircleDiameterRange: [5, 15],
 
   // Limit number of walkers and rely on bias to increase collision rate
-  MaxWalkers: 1000,
+  MaxWalkers: 3000,
 
   // Generate walkers in a circular area around center
   WalkerSource: 'Circle',
